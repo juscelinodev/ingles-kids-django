@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!-- <link rel="stylesheet" href="home.css"> -->
+    <title>home</title>
+</head>
+<body>
+    <nav class="container-nav">
+        <a href="{% url 'index' %}"><img class="logo" src="{% static 'img/logo.jpg' %}" alt="LOGO"></a>
+        <div class="botoes">
+            <a href="{% url 'cursos' %}"><button  class="cursos"> Cursos </button></a>
+            <a href="{% url 'progresso' %}"><button class="progresso"> Progresso </button></a>
+            <a href="{% url 'perfil' %}"><button class="perfil"> Perfil </button></a>
+            <a href="{% url 'sobre' %}"><button class="sobre"> Sobre Nós </button></a>
+
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}"><button class="sair"> Sair </button></a>
+            {% else %}
+            <a href="{% url 'login' %}"><button class="login"> Login </button></a>
+            <a href="{% url 'cadastro' %}"><button class="cadastro"> Cadastro </button></a>
+            {% endif %}
+
+        </div>
+    </nav>
+
+    {% block content %}    
+    {% endblock %}
+
+    <footer class="container-footer">
+        <section class="footer contatos">
+            <h3> Contatos </h3>
+            <p> (92) 99373-6820 </p>
+            <p> emailteste@gmail.com </p>
+            <p> R. Seilá, Bairro Teste, Manaus - Am </p>
+        </section>
+
+        <section class="footer redes">
+            <h3> Redes Sociais </h3>
+            <p> <a href="www.instagram.com"> Instagram </a> </p>
+            <p> <a href="www.twitter.com"> Twitter </a> </p>
+            <p> <a href="www.facebook.com"> Facebook </a> </p>
+            <p> <a href="www.linkedin.com"> LinkedIn </a> </p>
+        </section>
+    </footer>
+
+</body>
+</html>
