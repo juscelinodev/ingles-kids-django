@@ -8,7 +8,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col">
-                    <!-- <nav>
+                    <nav>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
                                 <a href="/">
@@ -21,7 +21,7 @@
                                 </a>
                             </li>
                         </ol>
-                    </nav> -->
+                    </nav>
                     <h1 class="category-name">
                         {{ category.title }}
                     </h1>
@@ -34,7 +34,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <!-- <div class="category-filter-box filter-box clearfix">
+                    <div class="category-filter-box filter-box clearfix">
                         <a href="" class="btn btn-outline-secondary all-btn">Todos</a>
 
                         <div class="btn-group category-list">
@@ -49,7 +49,8 @@
                                 {% endfor %}
                             </div>
                         </div>
-                    </div> -->
+
+                    </div>
                     <div class="category-course-list">
                         <ul>
                             {% for course in courses %}
@@ -72,24 +73,24 @@
                                             </div>
                                             <div class="course-meta">
                                                 <span class="">
-                                                    <!-- <i class="fas fa-play-circle"></i> -->
+                                                    <i class="fas fa-play-circle"></i>
                                                     {{ course.lessons.count }} Aulas
                                                 </span>
                                                 <span class="">
-                                                    <!-- <i class="far fa-clock"></i> -->
+                                                    <i class="far fa-clock"></i>
                                                     5 horas
                                                 </span>
                                                 <span class="">
-                                                    <!-- <i class="fas fa-closed-captioning"></i>Português-Inglês -->
+                                                    <i class="fas fa-closed-captioning"></i>Português-Inglês
                                                 </span>
                                             </div>
                                         </div>
                                         <div class="course-price-rating">
                                             <div class="course-price">
                                                 <span class="current-price">R$ {{ course.price }}</span>
-                                                {# {{--<span class="original-price">R$ 300</span>--}} #}
+                                                {#                                                {{--<span class="original-price">R$ 300</span>--}}#}
                                             </div>
-                                            <!-- <div class="rating">
+                                            <div class="rating">
                                                 <i class="fas fa-star filled"></i>
                                                 <i class="fas fa-star filled"></i>
                                                 <i class="fas fa-star filled"></i>
@@ -98,7 +99,7 @@
                                             </div>
                                             <div class="rating-number">
                                                 10 avaliações
-                                            </div> -->
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
