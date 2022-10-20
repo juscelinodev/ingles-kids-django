@@ -17,8 +17,8 @@ class UserLoginForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.user = None
-        self.fields['email'].widget.attrs.update({'placeholder': 'Enter Email'})
-        self.fields['password'].widget.attrs.update({'placeholder': 'Enter Password'})
+        self.fields['email'].widget.attrs.update({'placeholder': 'Insira o e-mail'})
+        self.fields['password'].widget.attrs.update({'placeholder': 'Insira uma senha'})
 
     def clean(self, *args, **kwargs):
         email = self.cleaned_data.get("email")
@@ -28,11 +28,11 @@ class UserLoginForm(forms.Form):
             self.user = authenticate(email=email, password=password)
 
             if self.user is None:
-                raise forms.ValidationError("User Does Not Exist.")
+                raise forms.ValidationError("Usuário não existe.")
             if not self.user.check_password(password):
-                raise forms.ValidationError("Password Does not Match.")
+                raise forms.ValidationError("Senha incorreta.")
             if not self.user.is_active:
-                raise forms.ValidationError("User is not Active.")
+                raise forms.ValidationError("Usuário não está ativo.")
 
         return super(UserLoginForm, self).clean(*args, **kwargs)
 
@@ -45,12 +45,12 @@ class UserRegistrationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['first_name'].icon = '<span class="input-field-icon"><i class="fas fa-envelope"></i></span>'
-        self.fields['first_name'].widget.attrs.update({'placeholder': 'Enter First Name'})
-        self.fields['last_name'].widget.attrs.update({'placeholder': 'Enter Last Name'})
-        self.fields['username'].widget.attrs.update({'placeholder': 'Username'})
-        self.fields['email'].widget.attrs.update({'placeholder': 'Email'})
-        self.fields['password1'].widget.attrs.update({'placeholder': 'Enter password'})
-        self.fields['password2'].widget.attrs.update({'placeholder': 'Again password'})
+        self.fields['first_name'].widget.attrs.update({'placeholder': 'Insira o nome'})
+        self.fields['last_name'].widget.attrs.update({'placeholder': 'Insira o sobrenome'})
+        self.fields['username'].widget.attrs.update({'placeholder': 'Usuário'})
+        self.fields['email'].widget.attrs.update({'placeholder': 'E-mail'})
+        self.fields['password1'].widget.attrs.update({'placeholder': 'Insira a senha'})
+        self.fields['password2'].widget.attrs.update({'placeholder': 'Insira novamente a senha'})
         # self.fields['email'].widget.attrs['placeholder'] = self.fields['email'].label or 'email@address.nl'
 
     class Meta:
@@ -70,7 +70,7 @@ class UserRegistrationForm(UserCreationForm):
     def clean_email(self):
         email = self.cleaned_data['email']
         if not email:
-            raise forms.ValidationError('Enter valid email')
+            raise forms.ValidationError('Insira um e-mail válido.')
         return email
 
     def save(self, commit=True):
@@ -87,8 +87,8 @@ class UserRegistrationForm(UserCreationForm):
 class ProfileUpdateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["first_name"].widget.attrs.update({'placeholder': 'Enter first name'})
-        self.fields["last_name"].widget.attrs.update({'placeholder': 'Enter last name'})
+        self.fields["first_name"].widget.attrs.update({'placeholder': 'Insira o nome'})
+        self.fields["last_name"].widget.attrs.update({'placeholder': 'Insira o sobrenome'})
 
     class Meta:
         model = User

@@ -20,7 +20,7 @@ class RegisterView(CreateView):
     success_url = '/login'
 
     extra_context = {
-        'title': 'Register'
+        'title': 'Cadastro'
     }
 
     def dispatch(self, request, *args, **kwargs):
@@ -54,7 +54,7 @@ class LoginView(FormView):
     template_name = 'accounts/form.html'
 
     extra_context = {
-        'title': 'Login'
+        'title': 'Entrar'
     }
 
     def dispatch(self, request, *args, **kwargs):
@@ -84,7 +84,7 @@ class LogoutView(RedirectView):
 
     def get(self, request, *args, **kwargs):
         auth.logout(request)
-        messages.success(request, 'You are now logged out')
+        messages.success(request, 'Sessão encerrada')
         return super(LogoutView, self).get(request, *args, **kwargs)
 
 

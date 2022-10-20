@@ -43,7 +43,7 @@
                 {% if request.path == "/login" %}
                     Caso não tenha uma conta <a href="{% url 'accounts:register' %}">Faça seu cadastro aqui.</a>
                 {% else %}
-                    Caso tenha uma conta <a href="{% url 'accounts:login' %}">Faça seu login aqui</a>
+                    Caso tenha uma conta <a href="{% url 'accounts:login' %}">Entre aqui</a>
                 {% endif %}
             </form>
         </div>
