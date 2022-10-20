@@ -13,7 +13,7 @@
                         <h1 class="title">{{ course.title }}</h1>
                         <p class="subtitle">{{ course.short_description|truncatewords:20 }}</p>
                         <div class="rating-row">
-                            {#                            {{ --<span class="course-badge best-seller">Best seller</span>--}}#}
+                            {#                            {{ --<span class="course-badge best-seller">Mais vendido</span>--}}#}
                             {% for i in i|rjust:5 %}
                                 {% if forloop.counter <= 5 %}
                                     <i class="fas fa-star filled" style="color: #f5c85b;"></i>
@@ -22,9 +22,9 @@
                                 {% endif %}
                             {% endfor %}
                             <span class="d-inline-block average-rating">5</span>
-                            <span>(20 ratings)</span>
+                            <span>(10 avaliações</span>
                             <span class="enrolled-num">
-                                100 students enrolled
+                                20 alunos matriculados
                             </span>
                         </div>
                         <div class="created-row">
@@ -32,10 +32,10 @@
                             {#                            {{ --Created by--}}#}
                             {#                            {{ --<a href="">first_name last_name</a>--}}#}
                             {#                            {{ --</span>--}}#}
-                            <span class="last-updated-date">Created on {{ course.created_at|date }}</span>
-                            <span class="last-updated-date">Last updated on {{ course.updated_at|date }}</span>
+                            <span class="last-updated-date">Criado em {{ course.created_at|date }}</span>
+                            <span class="last-updated-date">Última atualização em {{ course.updated_at|date }}</span>
                             <span class="comment">
-                                <i class="fas fa-comment"></i>English
+                                <i class="fas fa-comment"></i>Português-Inglês
                             </span>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                 <div class="col-lg-8">
 
                     <div class="what-you-get-box">
-                        <div class="what-you-get-title">What i will learn?</div>
+                        <div class="what-you-get-title">O que vou aprender?</div>
                         <ul class="what-you-get__items">
                             <li>{{ course.outcome }}</li>
                         </ul>
@@ -61,13 +61,13 @@
                     <br>
                     <div class="course-curriculum-box">
                         <div class="course-curriculum-title clearfix">
-                            <div class="title float-left">Lessons for this course</div>
+                            <div class="title float-left">Aulas para este curso</div>
                             <div class="float-right">
                                 <span class="total-lectures">
-                                    {{ course.lessons.count }} lessons
+                                    {{ course.lessons.count }} aulas
                                 </span>
                                 <span class="total-time">
-                                    2 hours
+                                    5 horas
                                 </span>
                             </div>
                         </div>
@@ -78,14 +78,14 @@
                                      data-target="#collapse"
                                      aria-expanded="false">
                                     <div class="title float-left">
-                                        Lessons
+                                        Aulas
                                     </div>
                                     <div class="float-right">
                                         <span class="total-lectures">
-                                             {{ course.lessons.count }} lessons
+                                             {{ course.lessons.count }} aulas
                                         </span>
                                         <span class="total-time">
-                                            {{ course.lessons|total_minutes | floatformat:2 }} minute
+                                            {{ course.lessons|total_minutes | floatformat:2 }} minutos
                                         </span>
                                     </div>
                                 </div>
@@ -106,7 +106,7 @@
                     </div>
 
                     <div class="requirements-box">
-                        <div class="requirements-title">Requirements</div>
+                        <div class="requirements-title">Requisitos</div>
                         <div class="requirements-content">
                             <ul class="requirements__list">
                                 <li>{{ course.requirements }}</li>
@@ -115,9 +115,9 @@
                     </div>
                     <div class="description-box view-more-parent">
                         <div class="view-more" onclick="viewMore(this,'hide')">
-                            + View More
+                            + Ver mais
                         </div>
-                        <div class="description-title">Description</div>
+                        <div class="description-title">Descrição</div>
                         <div class="description-content-wrap">
                             <div class="description-content">
                                 {{ course.description }}
@@ -127,8 +127,8 @@
 
 
                     <div class="compare-box view-more-parent">
-                        <div class="view-more" onclick="viewMore(this)">+ View More</div>
-                        <div class="compare-title">Other Related Courses</div>
+                        <div class="view-more" onclick="viewMore(this)">+ Ver mais</div>
+                        <div class="compare-title">Outros cursos relacionados</div>
                         <div class="compare-courses-wrap">
 
                         </div>
@@ -136,7 +136,7 @@
 
                     <div class="about-instructor-box">
                         <div class="about-instructor-title">
-                            About the instructor
+                            Sobre o professor
                         </div>
                         <div class="row">
                             <div class="col-lg-4">
@@ -146,33 +146,33 @@
                                         <!-- <li><i class="fas fa-star"></i><b>4.4</b> Average Rating</li> -->
                                         <li>
                                             <i class="fas fa-comment"></i><b>
-                                            100
-                                        </b> reviews
+                                            10
+                                        </b> avaliações
                                         </li>
                                         <li><i class="fas fa-user"></i><b>
-                                            120
-                                        </b> Students
+                                            20
+                                        </b> alunos
                                         </li>
                                         <li>
                                             <i class="fas fa-play-circle"></i>
                                             <b>
-                                                11
-                                            </b> Courses
+                                                4
+                                            </b> cursos
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-8">
                                 <div class="about-instructor-details view-more-parent">
-                                    <div class="view-more" onclick="viewMore(this)">+ View More</div>
+                                    <div class="view-more" onclick="viewMore(this)">+ Ver mais</div>
                                     <div class="instructor-name">
                                         <a href=""></a>
                                     </div>
                                     <div class="instructor-title">
-                                        title
+                                        John Altman
                                     </div>
                                     <div class="instructor-bio">
-                                        biography
+                                        Professor nativo e formado em Letras em Harvard
                                     </div>
                                 </div>
                             </div>
@@ -181,14 +181,14 @@
 
                     <div class="student-feedback-box">
                         <div class="student-feedback-title">
-                            Student feedback
+                            Avaliação dos alunos
                         </div>
                         <div class="row">
                             <div class="col-lg-6 col-lg-offset-4">
                                 <div class="average-rating">
                                     <div class="num">
                                         {#                                        {{ $course->average }}#}
-                                        3
+                                        4
                                     </div>
                                     <div class="rating">
                                         {% for i in i|rjust:5 %}
@@ -199,7 +199,7 @@
                                             {% endif %}
                                         {% endfor %}
                                     </div>
-                                    <div class="title">Average rating</div>
+                                    <div class="title">estrelas</div>
                                 </div>
                             </div>
                             {#                            {{--<div class="col-lg-9">--}}#}
@@ -228,7 +228,7 @@
                             {#                            {{--</div>--}}#}
                         </div>
                         <div class="reviews">
-                            <div class="reviews-title">Reviews</div>
+                            <div class="reviews-title">Avaliações</div>
                             <ul>
                                 <li>
                                     <div class="row">
@@ -239,10 +239,10 @@
                                                 </div>
                                                 <div class="review-time">
                                                     <div class="time">
-                                                        Review time
+                                                        Agosto, 2022
                                                     </div>
                                                     <div class="reviewer-name">
-                                                        Name
+                                                        João Roberto
                                                     </div>
                                                 </div>
                                             </div>
@@ -259,7 +259,7 @@
                                                     {% endfor %}
                                                 </div>
                                                 <div class="review-text">
-                                                    Review
+                                                    Ótimo curso
                                                 </div>
                                             </div>
                                         </div>
@@ -274,33 +274,33 @@
                         <div class="preview-video-box">
                             <a data-toggle="modal" data-target="#CoursePreviewModal">
                                 <img src="{% static 'images/learning.jpg' %}" alt="" class="img-fluid">
-                                <span class="preview-text">Preview this course</span>
+                                <span class="preview-text">Prévia do curso</span>
                                 <span class="play-btn"></span>
                             </a>
                         </div>
                         <div class="course-sidebar-text-box">
                             <div class="price">
                                 <span class="current-price">
-                                    $<span class="current-price">{{ course.price | floatformat:2 | intcomma }}</span></span>
+                                    R$ <span class="current-price">{{ course.price | floatformat:2 | intcomma }}</span></span>
                                 <input type="hidden" id="total_price_of_checking_out" value="{{ course.price | floatformat:2 }}">
                             </div>
 
                             {#                            {{ --<div class="buy-btns">--}}#}
-                            {#                            {{ --<button class="btn btn-buy-now" type="button">Already purchased</button>--}}#}
+                            {#                            {{ --<button class="btn btn-buy-now" type="button">Curso já comprado</button>--}}#}
                             {#                            {{ --</div>--}}#}
                             <div class="buy-btns">
                                 {% if is_enrolled %}
                                     <button class="btn btn-add-cart" type="button"
                                             style="background-color: #00796b; border-color: #08796f; color: #ffffff">
-                                        Go to course
+                                        Ir para o curso
                                     </button>
                                 {% else %}
                                     {% if is_in_cart %}
-                                        {#                                    <a href="" class="btn btn-buy-now" id="course_2" onclick="handleBuyNow(this)">Buy#}
-                                        {#                                        now</a>#}
+                                        {#                                    <a href="" class="btn btn-buy-now" id="course_2" onclick="handleBuyNow(this)">Comprar#}
+                                        {#                                        agora</a>#}
                                         <button class="btn btn-add-cart" type="button"
                                                 style="background-color: #ec5252; border-color: #ec5252; color: #ffffff">
-                                            Added to cart
+                                            Adicionado ao carrinho de compras
                                         </button>
                                     {% else %}
                                         <form action="{% url 'cart:cart_add' course.slug %}" method="post">
@@ -318,19 +318,19 @@
                             </div>
 
                             <div class="includes">
-                                <div class="title"><b>Includes:</b></div>
+                                <div class="title"><b>Incluso:</b></div>
                                 <ul>
                                     <li>
                                         <i class="far fa-file-video"></i>
-                                        on demand videos
+                                        Vídeos sob demanda
                                     </li>
                                     <li>
-                                        <i class="far fa-file"></i> 30 lessons
+                                        <i class="far fa-file"></i> 5 aulas
                                     </li>
-                                    <li><i class="far fa-compass"></i>Full lifetime access
+                                    <li><i class="far fa-compass"></i>Acesso vitalício
                                     </li>
                                     <li>
-                                        <i class="fas fa-mobile-alt"></i>Access on mobile and tv
+                                        <i class="fas fa-mobile-alt"></i>Assista no celular ou TV
                                     </li>
                                 </ul>
                             </div>

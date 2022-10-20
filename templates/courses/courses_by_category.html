@@ -35,11 +35,11 @@
             <div class="row">
                 <div class="col">
                     <div class="category-filter-box filter-box clearfix">
-                        <a href="" class="btn btn-outline-secondary all-btn">All</a>
+                        <a href="" class="btn btn-outline-secondary all-btn">Todos</a>
 
                         <div class="btn-group category-list">
                             <a class="btn btn-outline-secondary dropdown-toggle" href="#" data-toggle="dropdown">
-                                Category List
+                                Lista de Categorias
                             </a>
                             <div class="dropdown-menu">
                                 {% for category in categories %}
@@ -74,21 +74,21 @@
                                             <div class="course-meta">
                                                 <span class="">
                                                     <i class="fas fa-play-circle"></i>
-                                                    {{ course.lessons.count }} Lessons
+                                                    {{ course.lessons.count }} Aulas
                                                 </span>
                                                 <span class="">
                                                     <i class="far fa-clock"></i>
-                                                    3 hours
+                                                    5 horas
                                                 </span>
                                                 <span class="">
-                                                    <i class="fas fa-closed-captioning"></i>English
+                                                    <i class="fas fa-closed-captioning"></i>Português-Inglês
                                                 </span>
                                             </div>
                                         </div>
                                         <div class="course-price-rating">
                                             <div class="course-price">
-                                                <span class="current-price">${{ course.price }}</span>
-                                                {#                                                {{--<span class="original-price">$300</span>--}}#}
+                                                <span class="current-price">R$ {{ course.price }}</span>
+                                                {#                                                {{--<span class="original-price">R$ 300</span>--}}#}
                                             </div>
                                             <div class="rating">
                                                 <i class="fas fa-star filled"></i>
@@ -98,7 +98,7 @@
                                                 <span class="d-inline-block average-rating">5</span>
                                             </div>
                                             <div class="rating-number">
-                                                33 Ratings
+                                                10 avaliações
                                             </div>
                                         </div>
                                     </div>

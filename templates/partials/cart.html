@@ -36,7 +36,7 @@
                                                 {#                                                <div class="instructor-name">first_name last_name</div>#}
                                                 <div class="item-price">
                                                     <span class="current-price">${{ course.price }}</span>
-                                                    {#                                    {{ --<span class="original-price">$300</span>--}}#}
+                                                    {#                                    {{ --<span class="original-price">R$ 300,00</span>--}}#}
                                                 </div>
                                             </a>
                                         </div>
@@ -45,7 +45,7 @@
                             {% endwith %}
                         {% endfor %}
                     {% else %}
-                        Your cart is empty.
+                        Seu carrinho de compras está vazio.
                     {% endif %}
                 {% endwith %}
             </ul>
@@ -54,14 +54,14 @@
             <div class="cart-total-price clearfix">
                 <span>Total:</span>
                 <div class="float-right">
-                    <span class="current-price">${{ cart.get_total_price }}</span>
+                    <span class="current-price">R$ {{ cart.get_total_price }}</span>
                 </div>
             </div>
-            <a href="{% url 'cart:cart_detail' %}">Go to cart</a>
+            <a href="{% url 'cart:cart_detail' %}">Ir para carrinho de compras</a>
         </div>
     </div>
     <div class="empty-box text-center d-none">
-        <p>Your cart is empty.</p>
-        <a href="">Keep Shopping</a>
+        <p>Seu carrinho de compras está vazio</p>
+        <a href="">Continuar comprando</a>
     </div>
 </div>

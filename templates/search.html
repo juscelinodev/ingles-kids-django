@@ -13,7 +13,7 @@
                             <li class="breadcrumb-item"><a href="<?php echo site_url('home'); ?>"><i
                                     class="fas fa-home"></i></a></li>
                             <li class="breadcrumb-item active">
-                                Search Results
+                                Resultados da busca
                             </li>
                         </ol>
                     </nav>
@@ -44,7 +44,7 @@
                                             <a href="{% url 'courses:course-details' course.slug %}"
                                                class="course-title">{{ course.title }}</a>
                                             <a href="" class="course-instructor">
-                                                <span class="instructor-name">Instructor Name</span>
+                                                <span class="instructor-name">Nome do professor</span>
                                             </a>
                                             <div class="course-subtitle">
                                                 {{ course.short_description|truncatewords:30 }}
@@ -75,13 +75,13 @@
                                                 <span class="d-inline-block average-rating">3</span>
                                             </div>
                                             <div class="rating-number">
-                                                20 Ratings
+                                                10 Avaliações
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                             {% empty %}
-                                <p>Nothing found!</p>
+                                <p>Nada foi encotrado!</p>
                             {% endfor %}
                         </ul>
                     </div>

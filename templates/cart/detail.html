@@ -16,10 +16,10 @@
                                     <i class="fas fa-home"></i>
                                 </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#">Shopping Cart</a></li>
+                            <li class="breadcrumb-item"><a href="#">Carrinho de Compras</a></li>
                         </ol>
                     </nav>
-                    <h1 class="page-title">Shopping Cart</h1>
+                    <h1 class="page-title">Carrinho de Compras</h1>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
                         <div class="col-lg-9">
 
                             <div class="in-cart-box">
-                                <div class="title">{{ total_items }} courses in cart</div>
+                                <div class="title">{{ total_items }} cursos no carrinho</div>
                                 <div class="">
                                     <ul class="cart-course-list">
                                         {% for item in cart %}
@@ -87,13 +87,13 @@
                                 <div class="total-price">
                                     $<span id="total_price_of_checking_out">{{ cart.get_total_price | floatformat:2 | intcomma }}</span>
                                 </div>
-                                <a href="{% url "cart:cart_checkout" %}" class="btn btn-primary btn-block checkout-btn">Checkout
+                                <a href="{% url "cart:cart_checkout" %}" class="btn btn-primary btn-block checkout-btn">Finalizar
                                 </a>
                             </div>
                         </div>
                     </div>
                 {% else %}
-                    <div class="title">Cart is empty</div>
+                    <div class="title">Carrinho de compras vazio</div>
                 {% endif %}
             {% endwith %}
         </div>

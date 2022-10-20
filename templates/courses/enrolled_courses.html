@@ -8,11 +8,11 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="page-title">My Courses</h1>
+                    <h1 class="page-title">Meus cursos</h1>
                     <ul>
-                        <li class="active"><a href="">All courses</a></li>
+                        <li class="active"><a href="">Todos</a></li>
                         <li>
-                            <a href="">Wish lists</a>
+                            <a href="">Lista de desejos</a>
                         </li>
                     </ul>
                 </div>
@@ -29,7 +29,7 @@
                         <div class="btn-group">
                             <a class="btn btn-outline-secondary dropdown-toggle all-btn" href="#"
                                data-toggle="dropdown">
-                                Categories
+                                Categorias
                             </a>
 
                             <div class="dropdown-menu">
@@ -40,7 +40,7 @@
                         </div>
                         <div class="btn-group">
                             <a class="btn btn-outline-secondary dropdown-toggle" href="#" data-toggle="dropdown">
-                                Instructors
+                                Professores
                             </a>
 
                             <div class="dropdown-menu">
@@ -98,20 +98,20 @@
                                         {#                                        @endif#}
                                         {#                                        @endfor#}
                                         <p class="your-rating-text" id="ratings">
-                                            <span class="your">Your</span>
-                                            <span class="edit">Edit</span>
-                                            Rating
+                                            <span class="your">Seu</span>
+                                            <span class="edit">Editar</span>
+                                            Avaliação
                                         </p>
                                     </div>
                                 </div>
                                 <div class="row" style="padding: 5px;">
                                     <div class="col-md-6">
-                                        <a href="{% url 'courses:course-details' enroll.course.slug %}" class="btn">Course
-                                            Details</a>
+                                        <a href="{% url 'courses:course-details' enroll.course.slug %}" class="btn">DEtalhes
+                                            do Curso</a>
                                     </div>
                                     <div class="col-md-6">
-                                        <a href="{% url 'accounts:course-lessons' enroll.course.slug %}" class="btn">Start
-                                            lesson</a>
+                                        <a href="{% url 'accounts:course-lessons' enroll.course.slug %}" class="btn">Iniciar
+                                            aula</a>
                                     </div>
                                 </div>
                             </div>

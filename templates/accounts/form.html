@@ -41,9 +41,9 @@
                 <br>
                 <input class="btn btn-success" type="submit" value='{{ title }}'>&nbsp; &nbsp;
                 {% if request.path == "/login" %}
-                    Don't Have an Account <a href="{% url 'accounts:register' %}">Register Here.</a>
+                    Caso não tenha uma conta <a href="{% url 'accounts:register' %}">Faça seu cadastro aqui.</a>
                 {% else %}
-                    Have an Account <a href="{% url 'accounts:login' %}">Login Here.</a>
+                    Caso tenha uma conta <a href="{% url 'accounts:login' %}">Faça seu login aqui</a>
                 {% endif %}
             </form>
         </div>
