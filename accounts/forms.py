@@ -45,12 +45,12 @@ class UserRegistrationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['first_name'].icon = '<span class="input-field-icon"><i class="fas fa-envelope"></i></span>'
-        self.fields['first_name'].widget.attrs.update({'placeholder': 'Insira o nome'})
-        self.fields['last_name'].widget.attrs.update({'placeholder': 'Insira o sobrenome'})
-        self.fields['username'].widget.attrs.update({'placeholder': 'Usuário'})
-        self.fields['email'].widget.attrs.update({'placeholder': 'E-mail'})
-        self.fields['password1'].widget.attrs.update({'placeholder': 'Insira a senha'})
-        self.fields['password2'].widget.attrs.update({'placeholder': 'Insira novamente a senha'})
+        self.fields['first_name'].widget.attrs.update({'placeholder': 'Insira um nome'})
+        self.fields['last_name'].widget.attrs.update({'placeholder': 'Insira um sobrenome'})
+        self.fields['username'].widget.attrs.update({'placeholder': 'Insira um nome de usuário'})
+        self.fields['email'].widget.attrs.update({'placeholder': 'Insira um e-mail'})
+        self.fields['password1'].widget.attrs.update({'placeholder': 'Insira uma senha'})
+        self.fields['password2'].widget.attrs.update({'placeholder': 'Insira novamente uma senha'})
         # self.fields['email'].widget.attrs['placeholder'] = self.fields['email'].label or 'email@address.nl'
 
     class Meta:
