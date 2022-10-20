@@ -52,13 +52,13 @@
             <div class="row">
                 <div class="col-lg-8">
 
-                    <div class="what-you-get-box">
+                    <!-- <div class="what-you-get-box">
                         <div class="what-you-get-title">O que vou aprender?</div>
                         <ul class="what-you-get__items">
                             <li>{{ course.outcome }}</li>
                         </ul>
                     </div>
-                    <br>
+                    <br> -->
                     <div class="course-curriculum-box">
                         <div class="course-curriculum-title clearfix">
                             <div class="title float-left">Aulas para este curso</div>
@@ -66,9 +66,9 @@
                                 <span class="total-lectures">
                                     {{ course.lessons.count }} aulas
                                 </span>
-                                <span class="total-time">
+                                <!-- <span class="total-time">
                                     5 horas
-                                </span>
+                                </span> -->
                             </div>
                         </div>
                         <div class="course-curriculum-accordion">
@@ -85,7 +85,7 @@
                                              {{ course.lessons.count }} aulas
                                         </span>
                                         <span class="total-time">
-                                            {{ course.lessons|total_minutes | floatformat:2 }} minutos
+                                            {{ course.lessons|total_minutes | floatformat:0 }} minutos
                                         </span>
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@
                                         {% for lesson in course.lessons.all %}
                                             <li class="lecture has-preview">
                                                 <span class="lecture-title">{{ lesson.title }}</span>
-                                                <span class="lecture-time float-right">{{ lesson.duration | floatformat:2 }}</span>
+                                                <span class="lecture-time float-right">{{ lesson.duration | floatformat:0 }} minutos</span>
                                                 <!-- <span class="lecture-preview float-right" data-toggle="modal" data-target="#CoursePreviewModal">Preview</span> -->
                                             </li>
                                         {% endfor %}
@@ -105,18 +105,18 @@
                         </div>
                     </div>
 
-                    <div class="requirements-box">
+                    <!-- <div class="requirements-box">
                         <div class="requirements-title">Requisitos</div>
                         <div class="requirements-content">
                             <ul class="requirements__list">
                                 <li>{{ course.requirements }}</li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="description-box view-more-parent">
-                        <div class="view-more" onclick="viewMore(this,'hide')">
+                        <!-- <div class="view-more" onclick="viewMore(this,'hide')">
                             + Ver mais
-                        </div>
+                        </div> -->
                         <div class="description-title">Descrição</div>
                         <div class="description-content-wrap">
                             <div class="description-content">
@@ -126,80 +126,38 @@
                     </div>
 
 
-                    <div class="compare-box view-more-parent">
+                    <!-- <div class="compare-box view-more-parent">
                         <div class="view-more" onclick="viewMore(this)">+ Ver mais</div>
                         <div class="compare-title">Outros cursos relacionados</div>
                         <div class="compare-courses-wrap">
 
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="about-instructor-box">
-                        <div class="about-instructor-title">
-                            Sobre o professor
-                        </div>
+                    
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="about-instructor-image">
-                                    <img src="" alt="" class="img-fluid">
-                                    <ul>
-                                        <!-- <li><i class="fas fa-star"></i><b>4.4</b> Average Rating</li> -->
-                                        <li>
-                                            <i class="fas fa-comment"></i><b>
-                                            10
-                                        </b> avaliações
-                                        </li>
-                                        <li><i class="fas fa-user"></i><b>
-                                            20
-                                        </b> alunos
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-play-circle"></i>
-                                            <b>
-                                                4
-                                            </b> cursos
-                                        </li>
-                                    </ul>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-8">
                                 <div class="about-instructor-details view-more-parent">
-                                    <div class="view-more" onclick="viewMore(this)">+ Ver mais</div>
                                     <div class="instructor-name">
                                         <a href=""></a>
                                     </div>
-                                    <div class="instructor-title">
-                                        John Altman
-                                    </div>
-                                    <div class="instructor-bio">
-                                        Professor nativo e formado em Letras em Harvard
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="student-feedback-box">
-                        <div class="student-feedback-title">
-                            Avaliação dos alunos
-                        </div>
                         <div class="row">
                             <div class="col-lg-6 col-lg-offset-4">
                                 <div class="average-rating">
-                                    <div class="num">
-                                        {#                                        {{ $course->average }}#}
-                                        4
-                                    </div>
-                                    <div class="rating">
-                                        {% for i in i|rjust:5 %}
-                                            {% if forloop.counter <= 5 %}
-                                                <i class="fas fa-star filled" style="color: #f5c85b;"></i>
-                                            {% else %}
-                                                <i class="fas fa-star" style="color: #abb0bb;"></i>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                    <div class="title">estrelas</div>
+                                    
                                 </div>
                             </div>
                             {#                            {{--<div class="col-lg-9">--}}#}
@@ -227,46 +185,7 @@
                             {#                                {{--</div>--}}#}
                             {#                            {{--</div>--}}#}
                         </div>
-                        <div class="reviews">
-                            <div class="reviews-title">Avaliações</div>
-                            <ul>
-                                <li>
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="reviewer-details clearfix">
-                                                <div class="reviewer-img float-left">
-                                                    <img src="" alt="">
-                                                </div>
-                                                <div class="review-time">
-                                                    <div class="time">
-                                                        Agosto, 2022
-                                                    </div>
-                                                    <div class="reviewer-name">
-                                                        João Roberto
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="review-details">
-                                                <div class="rating">
-                                                    {% for i in i|rjust:5 %}
-                                                        {% if forloop.counter <= 5 %}
-                                                            <i class="fas fa-star filled" style="color: #f5c85b;"></i>
-                                                        {% else %}
-                                                            <i class="fas fa-star" style="color: #abb0bb;"></i>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </div>
-                                                <div class="review-text">
-                                                    Ótimo curso
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                       
                     </div>
                 </div>
                 <div class="col-lg-4">
